@@ -53,6 +53,40 @@ public class NonRepeatedPlayerNameValidatorTest {
 		fileLines.add(l1);
 		fileLines.add(l1);
 		fileLines.add(l2);
+		
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l2);
 
 		nrpnv.validate(fileLines);
 	}
@@ -74,12 +108,60 @@ public class NonRepeatedPlayerNameValidatorTest {
 	public void fileHasThreePlayersWithDifferentNameShouldPass() throws Exception {
 		fileLines.add(l1);
 		fileLines.add(l2);
-		fileLines.add(l3);
-		fileLines.add(l3);
 		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l3);
 		fileLines.add(l1);
 		fileLines.add(l1);
 		fileLines.add(l2);
+		
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l3);
+		fileLines.add(l1);
+		
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l3);
+		fileLines.add(l3);
 		fileLines.add(l3);
 
 		nrpnv.validate(fileLines);
@@ -89,12 +171,60 @@ public class NonRepeatedPlayerNameValidatorTest {
 	public void fileHasThreePlayersTwoWithSameNameShouldFail() throws Exception {
 		fileLines.add(l1);
 		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
 		fileLines.add(l1);
 		fileLines.add(l1);
 		fileLines.add(l2);
 		fileLines.add(l1);
 		fileLines.add(l1);
 		fileLines.add(l2);
+		
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l1);
+		
+		fileLines.add(l1);
+		fileLines.add(l1);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l2);
+		fileLines.add(l1);
+		fileLines.add(l1);
 		fileLines.add(l1);
 		
 		exception.expect(Exception.class);

@@ -9,12 +9,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import factories.ValidationRules;
+import gameManagment.GameManager;
 import validators.interfaces.ValidationRule;
 
-/**
- * Hello world!
- *
- */
 public class App {
 
 	public static void main(String[] args) {
@@ -33,14 +30,13 @@ public class App {
 				System.out.println("The text files has few attempts");
 				return;
 			}
-			
-			// check number of players
-			//int numberOfPlayers = new GameOptions().getNumberOfPlayers(fileLines);
 
 			try {
-				for (ValidationRule rule : ValidationRules.getInitialValidators()) {
+				for (ValidationRule rule : ValidationRules.get()) {
 					rule.validate(fileLines);
 				}
+				
+				new GameManager().getScoreboard(fileLines);
 			}
 			catch(Exception e) {
 				System.out.println(e.getMessage());
