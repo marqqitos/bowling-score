@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 
 import factories.ValidationRules;
 import gameManagment.GameManager;
+import gameManagment.PlayerManager;
+import models.Bowler;
 import validators.interfaces.ValidationRule;
 
 public class App {
@@ -36,7 +38,9 @@ public class App {
 					rule.validate(fileLines);
 				}
 				
-				new GameManager().getScoreboard(fileLines);
+				List<Bowler> bowlers = new PlayerManager().getBowlers(fileLines);
+				
+				new GameManager().getScoreboard(bowlers);
 			}
 			catch(Exception e) {
 				System.out.println(e.getMessage());

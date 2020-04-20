@@ -3,14 +3,17 @@ package gameManagment;
 import java.util.HashMap;
 import java.util.List;
 
+import models.Frame;
+
 public class ScoreManager {
 	
 	public ScoreManager() {
 	}
 
-	public HashMap<Integer, Integer> getFinalScore(List<Integer> scores) {
-		// TODO Auto-generated method stub
-		return null;
+	public void setScore(List<Frame> frames) {
+		for(Frame frame : frames) {
+			
+		}
 	}
 
 }
