@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import factories.ValidationRules;
-import gameManagment.GameManager;
-import gameManagment.PlayerManager;
+import gameManagment.FormatManager;
+import gameManagment.BowlerManager;
 import models.Bowler;
 import validators.interfaces.ValidationRule;
 
@@ -38,9 +38,11 @@ public class App {
 					rule.validate(fileLines);
 				}
 				
-				List<Bowler> bowlers = new PlayerManager().getBowlers(fileLines);
+				BowlerManager bm = new BowlerManager();
+				FormatManager fm = new FormatManager();
 				
-				new GameManager().getScoreboard(bowlers);
+				List<Bowler> bowlers = bm.getBowlers(fileLines);
+				fm.printScoreboard(bowlers);
 			}
 			catch(Exception e) {
 				System.out.println(e.getMessage());

@@ -38,6 +38,40 @@ public class AttemptsValidatorTest {
 
 		noav.validate(fileLines);
 	}
+	
+	@Test
+	public void allAttemptsAreFoulsWithOnePlayerShouldPass() throws Exception {
+		int i = 0;
+		while (i < 20) {
+			fileLines.add("Carl F");
+			i++;
+		}
+
+		noav.validate(fileLines);
+	}
+	
+	@Test
+	public void allAttemptsAreFoulsWithTwoPlayersShouldPass() throws Exception {
+		int i = 0;
+		while (i < 20) {
+			fileLines.add("Carl F");
+			fileLines.add("John F");			
+			i++;
+		}
+
+		noav.validate(fileLines);
+	}
+	
+	@Test
+	public void allAttemptsAreZerosWithOnePlayerShouldPass() throws Exception {
+		int i = 0;
+		while (i < 20) {
+			fileLines.add("Carl 0");
+			i++;
+		}
+
+		noav.validate(fileLines);
+	}
 
 	@Test
 	public void allAttemptsWithNoStrikesOrSparesWithOnePlayerShouldPass() throws Exception {

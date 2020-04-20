@@ -1,5 +1,7 @@
 package models;
 
+import enums.ScoringEnums;
+
 public class Frame {
 	private int knockedDownPinsFirstRoll;
 	private int knockedDownPinsSecondRoll;
@@ -8,9 +10,9 @@ public class Frame {
 	private int frameNumber;
 	
 	public Frame() {
-		this.knockedDownPinsFirstRoll = 0;
-		this.knockedDownPinsSecondRoll = 0;
-		this.knockedDownPinsThirdRoll = -1;
+		this.knockedDownPinsFirstRoll = ScoringEnums.NOTATTEMPTED.getValue();
+		this.knockedDownPinsSecondRoll = ScoringEnums.NOTATTEMPTED.getValue();
+		this.knockedDownPinsThirdRoll = ScoringEnums.NOTATTEMPTED.getValue();
 		this.score = 0;
 	}
 

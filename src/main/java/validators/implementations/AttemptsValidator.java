@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import enums.ScoringEnums;
 import validators.interfaces.ValidationRule;
 
 public class AttemptsValidator implements ValidationRule {
@@ -57,7 +58,7 @@ public class AttemptsValidator implements ValidationRule {
 
 		for (String line : fileLines) {
 			String player = line.split(" ")[0];
-			int score = Integer.parseInt(line.split(" ")[1]);
+			int score = (line.split(" ")[1]).equals("F") ? ScoringEnums.FOUL.getValue() : Integer.parseInt(line.split(" ")[1]);
 
 			if (turn == 0 && !player.equals(previousPlayer)) {
 				turn = numberOfPlayers;
@@ -107,7 +108,7 @@ public class AttemptsValidator implements ValidationRule {
 		List<String> scores = fileLines.stream().map(line -> line.split(" ")[1]).collect(Collectors.toList());
 
 		for (String sc : scores) {
-			int score = Integer.parseInt(sc);
+			int score = sc.equals("F") ? ScoringEnums.FOUL.getValue() : Integer.parseInt(sc);
 			attempt++;
 
 			if (frame < 10) {

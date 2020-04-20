@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import enums.ScoringEnums;
 import models.Bowler;
 import models.Frame;
 
-public class PlayerManager {
-	public PlayerManager() {
+public class BowlerManager {
+	public BowlerManager() {
 	}
 
 	public List<Bowler> getBowlers(List<String> fileLines) {
@@ -21,16 +22,16 @@ public class PlayerManager {
 
 			List<Frame> frames = new ArrayList<Frame>();
 			List<Integer> scores = fileLines.stream().filter(l -> l.contains(player))
-					.map(l -> Integer.parseInt(l.split(" ")[1])).collect(Collectors.toList());
+					.map(l -> l.split(" ")[1].equals("F") ? ScoringEnums.FOUL.getValue() : Integer.parseInt(l.split(" ")[1])).collect(Collectors.toList());
 			
 			int frameCount = 0;
 			
 			for (Integer score : scores) {
 				Frame frame = new Frame();
-				frame.setFrameNumber(frameCount);
+				frame.setFrameNumber(frameCount + 1);
 				if (frameCount < 9) {
-					if (score == 10) {
-						frame.setKnockedDownPinsFirstRoll(score);
+					if (score == ScoringEnums.STRIKE.getValue()) {
+						frame.setKnockedDownPinsFirstRoll(ScoringEnums.STRIKE.getValue());
 						frames.add(frame);
 						frameCount++;
 					} else {
@@ -49,15 +50,15 @@ public class PlayerManager {
 				else {
 					if(frames.size() <= frameCount) {
 						frame.setKnockedDownPinsFirstRoll(score);
-						frame.setKnockedDownPinsSecondRoll(-1);
+						frame.setKnockedDownPinsSecondRoll(ScoringEnums.NOTATTEMPTED.getValue());
 						frames.add(frame);
 					}
 					else {
 						Frame addedFrame = frames.get(frameCount);
-						if(addedFrame.getKnockedDownPinsSecondRoll() == -1) {
+						if(addedFrame.getKnockedDownPinsSecondRoll() == ScoringEnums.NOTATTEMPTED.getValue()) {
 							addedFrame.setKnockedDownPinsSecondRoll(score);
 						}
-						else if(addedFrame.getKnockedDownPinsThirdRoll() == -1) {
+						else if(addedFrame.getKnockedDownPinsThirdRoll() == ScoringEnums.NOTATTEMPTED.getValue()) {
 							addedFrame.setKnockedDownPinsThirdRoll(score);
 						}
 						

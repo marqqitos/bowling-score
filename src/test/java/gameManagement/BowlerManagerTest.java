@@ -10,24 +10,49 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import gameManagment.PlayerManager;
+import enums.ScoringEnums;
+import gameManagment.BowlerManager;
 import models.Bowler;
 import models.Frame;
 
-public class PlayerManagerTest {
-	private static PlayerManager pm;
+public class BowlerManagerTest {
+	private static BowlerManager bm;
 	private List<String> fileLines;
 	private List<Bowler> bowlers;
 
 	@BeforeClass
 	public static void setup() {
-		pm = new PlayerManager();
+		bm = new BowlerManager();
 	}
 
 	@Before
 	public void init() {
 		fileLines = new ArrayList<String>();
 		bowlers = new ArrayList<Bowler>();
+	}
+	
+	@Test
+	public void checkFrameNumbers() {
+		int i = 0;
+		while (i < 12) {
+			fileLines.add("Carl 10");
+			i++;
+		}
+
+		bowlers = bm.getBowlers(fileLines);
+
+		assertTrue(bowlers.size() == 1);
+
+		for (Bowler bowler : bowlers) {
+			assertTrue(bowler.getFrames().size() == 10);
+
+			int frameCount = 0;
+			for (Frame frame : bowler.getFrames()) {
+				frameCount++;
+
+				assertEquals(frameCount, frame.getFrameNumber());
+			}
+		}
 	}
 
 	@Test
@@ -38,7 +63,7 @@ public class PlayerManagerTest {
 			i++;
 		}
 
-		bowlers = pm.getBowlers(fileLines);
+		bowlers = bm.getBowlers(fileLines);
 
 		assertTrue(bowlers.size() == 1);
 
@@ -52,12 +77,34 @@ public class PlayerManagerTest {
 				assertEquals(10, frame.getKnockedDownPinsFirstRoll());
 
 				if (frameCount < 10) {
-					assertEquals(0, frame.getKnockedDownPinsSecondRoll());
-					assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+					assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsSecondRoll());
+					assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 				} else {
-					assertEquals(10, frame.getKnockedDownPinsSecondRoll());
-					assertEquals(10, frame.getKnockedDownPinsThirdRoll());
+					assertEquals(ScoringEnums.STRIKE.getValue(), frame.getKnockedDownPinsSecondRoll());
+					assertEquals(ScoringEnums.STRIKE.getValue(), frame.getKnockedDownPinsThirdRoll());
 				}
+			}
+		}
+	}
+	
+	@Test
+	public void bowlerWithAllFouls() {
+		int i = 0;
+		while (i < 20) {
+			fileLines.add("Carl F");
+			i++;
+		}
+
+		bowlers = bm.getBowlers(fileLines);
+
+		assertTrue(bowlers.size() == 1);
+
+		for (Bowler bowler : bowlers) {
+			assertTrue(bowler.getFrames().size() == 10);
+
+			for (Frame frame : bowler.getFrames()) {
+				assertEquals(ScoringEnums.FOUL.getValue(), frame.getKnockedDownPinsFirstRoll());
+				assertEquals(ScoringEnums.FOUL.getValue(), frame.getKnockedDownPinsSecondRoll());
 			}
 		}
 	}
@@ -73,7 +120,7 @@ public class PlayerManagerTest {
 
 		fileLines.add("Carl 7");
 
-		bowlers = pm.getBowlers(fileLines);
+		bowlers = bm.getBowlers(fileLines);
 
 		assertTrue(bowlers.size() == 1);
 
@@ -87,7 +134,7 @@ public class PlayerManagerTest {
 				assertEquals(3, frame.getKnockedDownPinsSecondRoll());
 
 				if (frameCount < 10) {
-					assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+					assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 				} else {
 					assertEquals(7, frame.getKnockedDownPinsThirdRoll());
 				}
@@ -104,7 +151,7 @@ public class PlayerManagerTest {
 			i++;
 		}
 
-		bowlers = pm.getBowlers(fileLines);
+		bowlers = bm.getBowlers(fileLines);
 
 		assertTrue(bowlers.size() == 1);
 
@@ -114,7 +161,7 @@ public class PlayerManagerTest {
 			for (Frame frame : bowler.getFrames()) {
 				assertEquals(6, frame.getKnockedDownPinsFirstRoll());
 				assertEquals(3, frame.getKnockedDownPinsSecondRoll());
-				assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+				assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 			}
 		}
 	}
@@ -130,7 +177,7 @@ public class PlayerManagerTest {
 			i++;
 		}
 
-		bowlers = pm.getBowlers(fileLines);
+		bowlers = bm.getBowlers(fileLines);
 
 		assertTrue(bowlers.size() == 2);
 
@@ -140,7 +187,7 @@ public class PlayerManagerTest {
 			for (Frame frame : bowler.getFrames()) {
 				assertEquals(6, frame.getKnockedDownPinsFirstRoll());
 				assertEquals(3, frame.getKnockedDownPinsSecondRoll());
-				assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+				assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 			}
 		}
 	}
@@ -159,7 +206,7 @@ public class PlayerManagerTest {
 		fileLines.add("Carl 7");
 		fileLines.add("John 7");
 
-		bowlers = pm.getBowlers(fileLines);
+		bowlers = bm.getBowlers(fileLines);
 
 		assertTrue(bowlers.size() == 2);
 
@@ -173,7 +220,7 @@ public class PlayerManagerTest {
 				assertEquals(3, frame.getKnockedDownPinsSecondRoll());
 
 				if (frameCount < 10) {
-					assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+					assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 				} else {
 					assertEquals(7, frame.getKnockedDownPinsThirdRoll());
 				}
@@ -197,7 +244,7 @@ public class PlayerManagerTest {
 		fileLines.add("John 7");
 		fileLines.add("John 2");
 
-		bowlers = pm.getBowlers(fileLines);
+		bowlers = bm.getBowlers(fileLines);
 
 		assertTrue(bowlers.size() == 2);
 
@@ -212,11 +259,11 @@ public class PlayerManagerTest {
 					assertEquals(10, frame.getKnockedDownPinsFirstRoll());
 
 					if (frameCount < 10) {
-						assertEquals(0, frame.getKnockedDownPinsSecondRoll());
-						assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+						assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsSecondRoll());
+						assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 					} else {
-						assertEquals(10, frame.getKnockedDownPinsSecondRoll());
-						assertEquals(10, frame.getKnockedDownPinsThirdRoll());
+						assertEquals(ScoringEnums.STRIKE.getValue(), frame.getKnockedDownPinsSecondRoll());
+						assertEquals(ScoringEnums.STRIKE.getValue(), frame.getKnockedDownPinsThirdRoll());
 					}
 				}
 			}
@@ -229,12 +276,12 @@ public class PlayerManagerTest {
 
 					if (frameCount < 10) {
 						assertEquals(3, frame.getKnockedDownPinsSecondRoll());
-						assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+						assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 					} else {
 						assertEquals(2, frame.getKnockedDownPinsSecondRoll());
 					}
 					
-					assertEquals(-1, frame.getKnockedDownPinsThirdRoll());
+					assertEquals(ScoringEnums.NOTATTEMPTED.getValue(), frame.getKnockedDownPinsThirdRoll());
 				}
 			}
 
