@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import factories.ValidationRules;
-import gameManagment.FormatManager;
-import gameManagment.BowlerManager;
+import gameManagement.FormatManager;
+import gameManagement.BowlerManager;
 import models.Bowler;
 import validators.interfaces.ValidationRule;
 

@@ -18,7 +18,7 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="D:\Archivos de Programa\Java\jdk1.8.0_241\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\marco\AppData\Local\Temp\surefire6457596749841698748\surefirebooter651372879467767826.jar C:\Users\marco\AppData\Local\Temp\surefire6457596749841698748 2020-04-20T22-14-24_205-jvmRun1 surefire8663908085845336395tmp surefire_07924234375976409640tmp"/>
+    <property name="sun.java.command" value="C:\Users\marco\AppData\Local\Temp\surefire5617134069419265477\surefirebooter4694450320229359519.jar C:\Users\marco\AppData\Local\Temp\surefire5617134069419265477 2020-04-20T22-34-25_298-jvmRun1 surefire5476277188536598891tmp surefire_01362611773143366785tmp"/>
     <property name="surefire.test.class.path" value="D:\Documentos\Java Projects\bowling-score\target\test-classes;D:\Documentos\Java Projects\bowling-score\target\classes;C:\Users\marco\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\marco\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\marco"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\marco\AppData\Local\Temp\surefire6457596749841698748\surefirebooter651372879467767826.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\marco\AppData\Local\Temp\surefire5617134069419265477\surefirebooter4694450320229359519.jar"/>
     <property name="sun.boot.class.path" value="D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\resources.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\rt.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\sunrsasign.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\jsse.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\jce.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\charsets.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\jfr.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -71,5 +71,5 @@
   <testcase name="twoBowlersWithAllNonSpareOrStrikeShots" classname="gameManagement.ScoreManagerTest" time="0"/>
   <testcase name="allZeroTwoPlayerShouldScoreZero" classname="gameManagement.ScoreManagerTest" time="0"/>
   <testcase name="bowlerWithAllNonSpareOrStrikeShots" classname="gameManagement.ScoreManagerTest" time="0"/>
-  <testcase name="twoBowlersWithAllSpareExceptLastShot" classname="gameManagement.ScoreManagerTest" time="0.001"/>
+  <testcase name="twoBowlersWithAllSpareExceptLastShot" classname="gameManagement.ScoreManagerTest" time="0"/>
 </testsuite>

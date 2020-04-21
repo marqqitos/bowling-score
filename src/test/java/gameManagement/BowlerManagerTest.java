@@ -11,7 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import enums.ScoringEnums;
-import gameManagment.BowlerManager;
+import gameManagement.BowlerManager;
 import models.Bowler;
 import models.Frame;
 
