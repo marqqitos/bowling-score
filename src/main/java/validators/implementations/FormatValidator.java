@@ -2,8 +2,7 @@ package validators.implementations;
 
 import java.util.List;
 
-import org.apache.commons.validator.routines.IntegerValidator;
-
+import utils.IntegerUtils;
 import validators.interfaces.ValidationRule;
 
 public class FormatValidator implements ValidationRule {
@@ -21,7 +20,7 @@ public class FormatValidator implements ValidationRule {
 			}
 			else {
 				String s = playerAndScore[1];
-				Integer score = IntegerValidator.getInstance().validate(s);
+				Integer score = IntegerUtils.tryParseInt(s);
 				
 				if(score == null && !s.equals("F")) {
 					throw new Exception("Score must be a number or F");

@@ -44,7 +44,7 @@ public class FormatManager {
 		String pinfalls = "\t";
 		
 		if(frame.getKnockedDownPinsFirstRoll() == ScoringEnums.STRIKE.getValue()) {
-			pinfalls = pinfalls.concat((frame.getFrameNumber() < 10 ? "\tX" : "X\t" + frame.getKnockedDownPinsSecondRoll() + "\t"));
+			pinfalls = pinfalls.concat((frame.getFrameNumber() < 10 ? "\tX" : "X\t" + getFramePinfall(frame.getKnockedDownPinsSecondRoll()) + "\t"));
 		}
 		else if (frame.getKnockedDownPinsFirstRoll() + frame.getKnockedDownPinsSecondRoll() == ScoringEnums.SPARE.getValue()) {
 			pinfalls = pinfalls.concat(frame.getKnockedDownPinsFirstRoll() + "\t/");
@@ -53,29 +53,33 @@ public class FormatManager {
 			pinfalls = pinfalls.concat((frame.getKnockedDownPinsFirstRoll() == ScoringEnums.FOUL.getValue() ? "F" : frame.getKnockedDownPinsFirstRoll()) + "\t" + (frame.getKnockedDownPinsSecondRoll() == ScoringEnums.FOUL.getValue() ? "F" : frame.getKnockedDownPinsSecondRoll()));
 		}
 		
-		if(frame.getFrameNumber() == 10) {
-			String lastAttempt = "";
-			
-			switch(frame.getKnockedDownPinsThirdRoll()) {
-				case 10:
-					lastAttempt = "X";
-					break;
-				case -1:
-					lastAttempt = "F";
-					break;
-				case -2:
-					lastAttempt = "-";
-					break;
-				default:
-					lastAttempt = Integer.toString(frame.getKnockedDownPinsThirdRoll());
-			}
-			
-			pinfalls = pinfalls.concat(lastAttempt + "\n");
+		if(frame.getFrameNumber() == 10) {			
+			pinfalls = pinfalls.concat(getFramePinfall(frame.getKnockedDownPinsThirdRoll()) + "\n");
 		}
 		
 		return pinfalls;
 	}
 	
+	private String getFramePinfall(int pinfall) {
+		String lastAttempt = "\t";
+		
+		switch(pinfall) {
+			case 10:
+				lastAttempt = lastAttempt.concat("X");
+				break;
+			case -1:
+				lastAttempt = lastAttempt.concat("F");
+				break;
+			case -2:
+				lastAttempt = lastAttempt.concat("-");
+				break;
+			default:
+				lastAttempt = Integer.toString(pinfall);
+		}
+		
+		return lastAttempt;
+	}
+		
 	private String getScores(Frame frame) {
 		return frame.getScore() + "\t\t";
 	}

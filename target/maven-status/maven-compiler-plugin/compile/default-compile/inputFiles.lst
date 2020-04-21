@@ -8,6 +8,7 @@ D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementatio
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\NumberOfPinsThrownValidator.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\AttemptsValidator.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\interfaces\ValidationRule.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\utils\IntegerUtils.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\main\App.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\models\Frame.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\FormatValidator.java
