@@ -38,6 +38,17 @@ public class FormatValidatorTest {
 		
 		fv.validate(fileLines);
 	}
+	
+	@Test
+	public void fileHasFoulAttemptShouldPass() throws Exception {
+		String l1 = "Jeff 10";
+		String l2 = "John F";
+		
+		fileLines.add(l1);
+		fileLines.add(l2);
+		
+		fv.validate(fileLines);
+	}
 
 	@Test
 	public void fileHasLineWithNoSpacesShouldFail() throws Exception {

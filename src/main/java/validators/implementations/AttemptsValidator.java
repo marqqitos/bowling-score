@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import enums.ScoringEnums;
 import validators.interfaces.ValidationRule;
 
 public class AttemptsValidator implements ValidationRule {
@@ -58,7 +57,7 @@ public class AttemptsValidator implements ValidationRule {
 
 		for (String line : fileLines) {
 			String player = line.split(" ")[0];
-			int score = (line.split(" ")[1]).equals("F") ? ScoringEnums.FOUL.getValue() : Integer.parseInt(line.split(" ")[1]);
+			int score = (line.split(" ")[1]).equals("F") ? 0 : Integer.parseInt(line.split(" ")[1]);
 
 			if (turn == 0 && !player.equals(previousPlayer)) {
 				turn = numberOfPlayers;
@@ -67,19 +66,14 @@ public class AttemptsValidator implements ValidationRule {
 
 			if (player.equals(previousPlayer)) {
 				attempts++;
-				if (previousScore == 10 || (previousScore + score > 10) && frame < 10) {
+				if ((previousScore == 10 || (previousScore + score > 10)) && frame < 10) {
 					throw new Exception(
 							"There is a second attempt after an strike or both amounts add up more than ten before frame 10");
 				} else if (attempts > 2 && frame < 10) {
 					throw new Exception("There are more than two attempts for a player before frame 10");
 				} else if (frame == 10) {
-					if (attempts == 1) {
-						previousScore = score;
-						allowedExtraAttempt = score == 10;
-					} else if (attempts == 2) {
-						if (previousScore != 10) {
-							allowedExtraAttempt = (previousScore + score) % 10 == 0;
-						}
+					if (attempts == 2) {
+						allowedExtraAttempt = (previousScore == 10) || ((previousScore + score) % 10 == 0);
 					} else if (attempts == 3 && !allowedExtraAttempt) {
 						throw new Exception("Extra attempt not allowed");
 					}
@@ -108,7 +102,7 @@ public class AttemptsValidator implements ValidationRule {
 		List<String> scores = fileLines.stream().map(line -> line.split(" ")[1]).collect(Collectors.toList());
 
 		for (String sc : scores) {
-			int score = sc.equals("F") ? ScoringEnums.FOUL.getValue() : Integer.parseInt(sc);
+			int score = sc.equals("F") ? 0 : Integer.parseInt(sc);
 			attempt++;
 
 			if (frame < 10) {

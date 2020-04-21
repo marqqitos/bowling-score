@@ -1,1 +1,13 @@
-D:\Documentos\NetBeansProjects\bowling-score\src\main\java\com\marcos\App.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\models\Bowler.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagment\ScoreManager.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\enums\ScoringEnums.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\factories\ValidationRules.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagment\BowlerManager.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagment\FormatManager.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\NonRepeatedPlayerNameValidator.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\NumberOfPinsThrownValidator.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\AttemptsValidator.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\validators\interfaces\ValidationRule.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\main\App.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\models\Frame.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\FormatValidator.java

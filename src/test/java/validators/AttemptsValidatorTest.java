@@ -677,4 +677,45 @@ public class AttemptsValidatorTest {
 		exception.expect(Exception.class);
 		noav.validate(fileLines);
 	}
+	
+	@Test
+	public void validMatchTwoPlayersShouldPass() throws Exception {
+		fileLines.add("Jeff 10");
+		fileLines.add("John 3");
+		fileLines.add("John 7");
+		fileLines.add("Jeff 7");
+		fileLines.add("Jeff 3");
+		fileLines.add("John 6");
+		fileLines.add("John 3");
+		fileLines.add("Jeff 9");
+		fileLines.add("Jeff 0");
+		fileLines.add("John 10");
+		fileLines.add("Jeff 10");
+		fileLines.add("John 8");
+		fileLines.add("John 1");
+		fileLines.add("Jeff 0");
+		fileLines.add("Jeff 8");
+		fileLines.add("John 10");
+		fileLines.add("Jeff 8");
+		fileLines.add("Jeff 2");
+		fileLines.add("John 10");
+		fileLines.add("Jeff F");
+		fileLines.add("Jeff 6");
+		fileLines.add("John 9");
+		fileLines.add("John 0");
+		fileLines.add("Jeff 10");
+		fileLines.add("John 7");
+		fileLines.add("John 3");
+		fileLines.add("Jeff 10");
+		fileLines.add("John 4");
+		fileLines.add("John 4");
+		fileLines.add("Jeff 10");
+		fileLines.add("Jeff 8");
+		fileLines.add("Jeff 1");
+		fileLines.add("John 10");
+		fileLines.add("John 9");
+		fileLines.add("John 0");
+		
+		noav.validate(fileLines);
+	}
 }

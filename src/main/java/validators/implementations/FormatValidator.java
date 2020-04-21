@@ -23,7 +23,7 @@ public class FormatValidator implements ValidationRule {
 				String s = playerAndScore[1];
 				Integer score = IntegerValidator.getInstance().validate(s);
 				
-				if(score == null && s != "F") {
+				if(score == null && !s.equals("F")) {
 					throw new Exception("Score must be a number or F");
 				}
 			}
