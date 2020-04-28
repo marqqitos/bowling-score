@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="gameManagement.BowlerManagerTest" time="0.058" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="gameManagement.BowlerManagerTest" time="0.062" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="D:\Archivos de Programa\Java\jdk1.8.0_241\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\marco\AppData\Local\Temp\surefire8386205807008526528\surefirebooter681477036451668032.jar C:\Users\marco\AppData\Local\Temp\surefire8386205807008526528 2020-04-20T22-35-19_853-jvmRun1 surefire7987411387384956408tmp surefire_03452696876802288864tmp"/>
+    <property name="sun.java.command" value="C:\Users\marco\AppData\Local\Temp\surefire4957068279026781317\surefirebooter5459952944700538447.jar C:\Users\marco\AppData\Local\Temp\surefire4957068279026781317 2020-04-28T19-33-06_181-jvmRun1 surefire7574524207730351110tmp surefire_06199502499162877716tmp"/>
     <property name="surefire.test.class.path" value="D:\Documentos\Java Projects\bowling-score\target\test-classes;D:\Documentos\Java Projects\bowling-score\target\classes;C:\Users\marco\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\marco\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\marco"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\marco\AppData\Local\Temp\surefire8386205807008526528\surefirebooter681477036451668032.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\marco\AppData\Local\Temp\surefire4957068279026781317\surefirebooter5459952944700538447.jar"/>
     <property name="sun.boot.class.path" value="D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\resources.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\rt.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\sunrsasign.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\jsse.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\jce.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\charsets.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\lib\jfr.jar;D:\Archivos de Programa\Java\jdk1.8.0_241\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -52,7 +52,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="java.library.path" value="D:\Archivos de Programa\Java\jdk1.8.0_241\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\marco\bin;D:\Archivos de Programa\Git\mingw64\bin;D:\Archivos de Programa\Git\usr\local\bin;D:\Archivos de Programa\Git\usr\bin;D:\Archivos de Programa\Git\usr\bin;D:\Archivos de Programa\Git\mingw64\bin;D:\Archivos de Programa\Git\usr\bin;C:\Users\marco\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Archivos de Programa\Git\cmd;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;D:\Archivos de Programa\nodejs;D:\Archivos de Programa\TortoiseSVN\bin;D:\anaconda3\Scripts;D:\Archivos de Programa\Maven\apache-maven-3.6.3\bin;D:\Ruby26-x64\bin;C:\Users\marco\AppData\Local\Microsoft\WindowsApps;C:\Users\marco\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\marco\AppData\Roaming\npm;D:\Archivos de Programa\Git\usr\bin\vendor_perl;D:\Archivos de Programa\Git\usr\bin\core_perl;."/>
+    <property name="java.library.path" value="D:\Archivos de Programa\Java\jdk1.8.0_241\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\marco\bin;D:\Archivos de Programa\Git\mingw64\bin;D:\Archivos de Programa\Git\usr\local\bin;D:\Archivos de Programa\Git\usr\bin;D:\Archivos de Programa\Git\usr\bin;D:\Archivos de Programa\Git\mingw64\bin;D:\Archivos de Programa\Git\usr\bin;C:\Users\marco\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Archivos de Programa\Git\cmd;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;D:\Archivos de Programa\nodejs;D:\anaconda3\Scripts;D:\Archivos de Programa\Maven\apache-maven-3.6.3\bin;C:\Users\marco\AppData\Roaming\npm;D:\Ruby26-x64\bin;C:\Users\marco\AppData\Local\Microsoft\WindowsApps;C:\Users\marco\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\marco\AppData\Roaming\npm;D:\Archivos de Programa\Git\usr\bin\vendor_perl;D:\Archivos de Programa\Git\usr\bin\core_perl;."/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="25.241-b07"/>
@@ -60,12 +60,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="twoBowlersOneWithAllStrikesOtherWithNoExtraAttempt" classname="gameManagement.BowlerManagerTest" time="0.037"/>
+  <testcase name="twoBowlersOneWithAllStrikesOtherWithNoExtraAttempt" classname="gameManagement.BowlerManagerTest" time="0.04"/>
   <testcase name="bowlerWithAllSparesExceptLastShot" classname="gameManagement.BowlerManagerTest" time="0"/>
   <testcase name="bowlerWithAllStrikes" classname="gameManagement.BowlerManagerTest" time="0"/>
   <testcase name="checkFrameNumbers" classname="gameManagement.BowlerManagerTest" time="0"/>
   <testcase name="twoBowlersWithAllNonSpareOrStrikeShots" classname="gameManagement.BowlerManagerTest" time="0.001"/>
   <testcase name="bowlerWithAllFouls" classname="gameManagement.BowlerManagerTest" time="0"/>
-  <testcase name="bowlerWithAllNonSpareOrStrikeShots" classname="gameManagement.BowlerManagerTest" time="0.001"/>
-  <testcase name="twoBowlersWithAllSpareExceptLastShot" classname="gameManagement.BowlerManagerTest" time="0"/>
+  <testcase name="bowlerWithAllNonSpareOrStrikeShots" classname="gameManagement.BowlerManagerTest" time="0"/>
+  <testcase name="twoBowlersWithAllSpareExceptLastShot" classname="gameManagement.BowlerManagerTest" time="0.001"/>
 </testsuite>

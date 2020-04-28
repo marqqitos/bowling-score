@@ -1,11 +1,12 @@
-package gameManagement;
+package gameManagement.implementations;
 
 import java.util.List;
 
 import enums.ScoringEnums;
+import gameManagement.interfaces.IScoreManager;
 import models.Frame;
 
-public class ScoreManager {
+public class ScoreManager implements IScoreManager {
 
 	public ScoreManager() {
 	}

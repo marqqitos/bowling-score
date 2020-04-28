@@ -1,16 +1,18 @@
-package gameManagement;
+package gameManagement.implementations;
 
 import java.util.List;
 
 import models.Bowler;
 import models.Frame;
 import enums.ScoringEnums;
+import gameManagement.interfaces.IFormatManager;
+import gameManagement.interfaces.IScoreManager;
 
-public class FormatManager {
-	private ScoreManager scoreManager;
+public class FormatManager implements IFormatManager {
+	private IScoreManager scoreManager;
 
-	public FormatManager() {
-		scoreManager = new ScoreManager();
+	public FormatManager(IScoreManager scoreManager) {
+		this.scoreManager = scoreManager;
 	}
 
 	public void printScoreboard(List<Bowler> bowlers) {

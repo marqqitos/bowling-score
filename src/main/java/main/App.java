@@ -1,55 +1,49 @@
 package main;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import factories.ValidationRules;
-import gameManagement.FormatManager;
-import gameManagement.BowlerManager;
+import fileManagement.implementations.FileManager;
+import fileManagement.interfaces.IFileManager;
+import gameManagement.implementations.BowlerManager;
+import gameManagement.implementations.FormatManager;
+import gameManagement.implementations.ScoreManager;
+import gameManagement.interfaces.IBowlerManager;
+import gameManagement.interfaces.IFormatManager;
+import gameManagement.interfaces.IScoreManager;
 import models.Bowler;
+import validators.implementations.ValidationRules;
+import validators.interfaces.IValidationRules;
 import validators.interfaces.ValidationRule;
 
 public class App {
 
 	public static void main(String[] args) {
-		if (args == null || args.length <= 0) {
-			System.out.println("Please pass a text file as an argument");
-			return;
-		}
+		List<String> arguments = Arrays.asList(args);
+		IValidationRules vr = new ValidationRules();
 
-		String fileName = args[0];
+		try {
+			vr.getArgumentValidator().validate(arguments);
 
-		try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
-			List<String> fileLines = new ArrayList<>();
-			fileLines = br.lines().collect(Collectors.toList());
-			
-			if(fileLines.size() < 12) {
-				System.out.println("The text files has few attempts");
-				return;
+			String fileName = args[0];
+
+			IFileManager fileManager = new FileManager();
+
+			List<String> fileLines = fileManager.getFileLines(fileName);
+			vr.getFileValidator().validate(fileLines);
+
+			for (ValidationRule rule : vr.getGameValidators()) {
+				rule.validate(fileLines);
 			}
 
-			try {
-				for (ValidationRule rule : ValidationRules.get()) {
-					rule.validate(fileLines);
-				}
-				
-				BowlerManager bm = new BowlerManager();
-				FormatManager fm = new FormatManager();
-				
-				List<Bowler> bowlers = bm.getBowlers(fileLines);
-				fm.printScoreboard(bowlers);
-			}
-			catch(Exception e) {
-				System.out.println(e.getMessage());
-			}
+			IBowlerManager bm = new BowlerManager();
+			IScoreManager sm = new ScoreManager();
+			IFormatManager fm = new FormatManager(sm);
 
-		} catch (IOException e) {
-			e.printStackTrace();
+			List<Bowler> bowlers = bm.getBowlers(fileLines);
+			fm.printScoreboard(bowlers);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }

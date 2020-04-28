@@ -1,14 +1,15 @@
-package gameManagement;
+package gameManagement.implementations;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import enums.ScoringEnums;
+import gameManagement.interfaces.IBowlerManager;
 import models.Bowler;
 import models.Frame;
 
-public class BowlerManager {
+public class BowlerManager implements IBowlerManager {
 	public BowlerManager() {
 	}
 

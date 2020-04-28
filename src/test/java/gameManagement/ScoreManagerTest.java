@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import gameManagement.BowlerManager;
-import gameManagement.ScoreManager;
+import gameManagement.implementations.BowlerManager;
+import gameManagement.implementations.ScoreManager;
 import models.Bowler;
 
 public class ScoreManagerTest {

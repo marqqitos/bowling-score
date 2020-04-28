@@ -1,7 +1,9 @@
 D:\Documentos\Java Projects\bowling-score\src\test\java\validators\NumberOfPinsThrownValidatorTest.java
 D:\Documentos\Java Projects\bowling-score\src\test\java\gameManagement\ScoreManagerTest.java
+D:\Documentos\Java Projects\bowling-score\src\test\java\validators\ArgumentValidatorTest.java
 D:\Documentos\Java Projects\bowling-score\src\test\java\validators\FormatValidatorTest.java
 D:\Documentos\Java Projects\bowling-score\src\test\java\validators\NonRepeatedPlayerNameValidatorTest.java
 D:\Documentos\Java Projects\bowling-score\src\test\java\validators\AttemptsValidatorTest.java
+D:\Documentos\Java Projects\bowling-score\src\test\java\validators\FileValidatorTest.java
 D:\Documentos\Java Projects\bowling-score\src\test\java\gameManagement\BowlerManagerTest.java
 D:\Documentos\Java Projects\bowling-score\src\test\java\main\AppTest.java
