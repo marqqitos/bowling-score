@@ -22,5 +22,5 @@ Test cases are inside "testFiles" folder
 
 
 ## Bonus
-I completed the BONUS task, I have used stream and lambdas function of Java 8
-I couldn't do automated Integration Test, I ran out of time
+- I completed the BONUS task, I have used stream and lambdas function of Java 8
+- I couldn't do automated Integration Test, I ran out of time
