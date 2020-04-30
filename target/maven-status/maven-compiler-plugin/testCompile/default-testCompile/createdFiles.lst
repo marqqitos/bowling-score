@@ -1,0 +1,9 @@
+validators\AttemptsValidatorTest.class
+validators\FileValidatorTest.class
+validators\NonRepeatedPlayerNameValidatorTest.class
+validators\NumberOfPinsThrownValidatorTest.class
+gameManagement\ScoreManagerTest.class
+main\AppTest.class
+validators\ArgumentValidatorTest.class
+validators\FormatValidatorTest.class
+gameManagement\BowlerManagerTest.class

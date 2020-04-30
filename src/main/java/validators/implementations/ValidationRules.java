@@ -7,9 +7,9 @@ import validators.interfaces.IValidationRules;
 import validators.interfaces.ValidationRule;
 
 public class ValidationRules implements IValidationRules {
-	List<ValidationRule> gameValidators = new ArrayList<ValidationRule>();
-	ValidationRule argumentValidator;
-	ValidationRule fileValidator;
+	private List<ValidationRule> gameValidators = new ArrayList<ValidationRule>();
+	private ValidationRule argumentValidator;
+	private ValidationRule fileValidator;
 	
 	public ValidationRules() {
 		gameValidators.add(new FormatValidator());

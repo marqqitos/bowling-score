@@ -1,13 +1,12 @@
-package fileManagement.implementations;
+package appManagement.implementations;
 
 import java.io.BufferedReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import fileManagement.interfaces.IFileManager;
+import appManagement.interfaces.IFileManager;
 
 public class FileManager implements IFileManager{
 	public FileManager() {

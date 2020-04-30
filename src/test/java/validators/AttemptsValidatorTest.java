@@ -1,5 +1,7 @@
 package validators;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import models.Bowler;
 import validators.implementations.AttemptsValidator;
 
 public class AttemptsValidatorTest {
@@ -47,6 +50,18 @@ public class AttemptsValidatorTest {
 			i++;
 		}
 
+		noav.validate(fileLines);
+	}
+	
+	@Test
+	public void allAttemptsAreZeroesWithExtraAttemptFrame10OnePlayerShouldFail() throws Exception {
+		int i = 0;
+		while (i < 21) {
+			fileLines.add("Carl 0");
+			i++;
+		}
+		
+		exception.expect(Exception.class);
 		noav.validate(fileLines);
 	}
 	
@@ -716,6 +731,20 @@ public class AttemptsValidatorTest {
 		fileLines.add("John 9");
 		fileLines.add("John 0");
 		
+		noav.validate(fileLines);
+	}
+	
+	@Test
+	public void allFoulsAndSpareShouldPass() throws Exception {
+		int f = 0;
+		while (f < 10) {
+			fileLines.add("Carl F");
+			fileLines.add("Carl 10");
+			f++;
+		}
+		
+		fileLines.add("Carl F");
+
 		noav.validate(fileLines);
 	}
 }

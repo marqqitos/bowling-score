@@ -3,14 +3,12 @@ package main;
 import java.util.Arrays;
 import java.util.List;
 
-import fileManagement.implementations.FileManager;
-import fileManagement.interfaces.IFileManager;
-import gameManagement.implementations.BowlerManager;
-import gameManagement.implementations.FormatManager;
-import gameManagement.implementations.ScoreManager;
+import appManagement.implementations.AppManager;
+import appManagement.implementations.FileManager;
+import appManagement.interfaces.IAppManager;
+import appManagement.interfaces.IFileManager;
 import gameManagement.interfaces.IBowlerManager;
 import gameManagement.interfaces.IFormatManager;
-import gameManagement.interfaces.IScoreManager;
 import models.Bowler;
 import validators.implementations.ValidationRules;
 import validators.interfaces.IValidationRules;
@@ -23,22 +21,26 @@ public class App {
 		IValidationRules vr = new ValidationRules();
 
 		try {
+			//Validate that there is at least a parameter passed to the program
 			vr.getArgumentValidator().validate(arguments);
 
 			String fileName = args[0];
-
 			IFileManager fileManager = new FileManager();
 
+			//Read the file and get the file lines
 			List<String> fileLines = fileManager.getFileLines(fileName);
+			
+			//Validate that is has a minimum of lines to consider it a game
 			vr.getFileValidator().validate(fileLines);
 
+			//Apply all the rule validations to the file lines
 			for (ValidationRule rule : vr.getGameValidators()) {
 				rule.validate(fileLines);
 			}
 
-			IBowlerManager bm = new BowlerManager();
-			IScoreManager sm = new ScoreManager();
-			IFormatManager fm = new FormatManager(sm);
+			IAppManager am = new AppManager();
+			IBowlerManager bm = am.getBowlerManager();
+			IFormatManager fm = am.getFormatManager();
 
 			List<Bowler> bowlers = bm.getBowlers(fileLines);
 			fm.printScoreboard(bowlers);

@@ -3,16 +3,17 @@ D:\Documentos\Java Projects\bowling-score\src\main\java\models\Bowler.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagment\ScoreManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\enums\ScoringEnums.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagement\implementations\FormatManager.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\appManagement\interfaces\IAppManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\NumberOfPinsThrownValidator.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\AttemptsValidator.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\main\App.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\FormatValidator.java
-D:\Documentos\Java Projects\bowling-score\src\main\java\fileManagement\implementations\FileManager.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\appManagement\implementations\AppManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagment\BowlerManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagment\FormatManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\NonRepeatedPlayerNameValidator.java
-D:\Documentos\Java Projects\bowling-score\src\main\java\fileManagement\interfaces\IFileManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagement\interfaces\IScoreManager.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\config\Config.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\ValidationRules.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\gameManagement\interfaces\IBowlerManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\FileValidator.java
@@ -22,4 +23,6 @@ D:\Documentos\Java Projects\bowling-score\src\main\java\validators\interfaces\IV
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\interfaces\ValidationRule.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\utils\IntegerUtils.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\validators\implementations\ArgumentValidator.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\appManagement\implementations\FileManager.java
+D:\Documentos\Java Projects\bowling-score\src\main\java\appManagement\interfaces\IFileManager.java
 D:\Documentos\Java Projects\bowling-score\src\main\java\models\Frame.java

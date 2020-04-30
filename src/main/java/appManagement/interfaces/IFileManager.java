@@ -1,4 +1,4 @@
-package fileManagement.interfaces;
+package appManagement.interfaces;
 
 import java.util.List;
 

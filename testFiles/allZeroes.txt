@@ -17,5 +17,4 @@ Carl 0
 Carl 0
 Carl 0
 Carl 0
-Carl 10
-Carl 5
+Carl 0

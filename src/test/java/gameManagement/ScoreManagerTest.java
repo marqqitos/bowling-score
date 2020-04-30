@@ -317,4 +317,28 @@ public class ScoreManagerTest {
 
 		}
 	}
+	
+	@Test
+	public void allFoulsAndSpareShouldScoreOneHundred() {
+		int f = 0;
+		while (f < 10) {
+			fileLines.add("Carl F");
+			fileLines.add("Carl 10");
+			f++;
+		}
+		
+		fileLines.add("Carl F");
+
+		bowlers = pm.getBowlers(fileLines);
+
+		for (Bowler bowler : bowlers) {
+			sm.setScore(bowler.getFrames());
+
+			for (int j = 0; j < bowler.getFrames().size(); j++) {
+				assertEquals(10 * (j + 1), bowler.getFrames().get(j).getScore());
+			}
+
+			assertEquals(100, bowler.getFrames().get(9).getScore());
+		}
+	}
 }

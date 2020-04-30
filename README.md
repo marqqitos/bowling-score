@@ -2,17 +2,20 @@
 To compile the code:
 Inside the "bowling-score" folder run:
 
-mvn package
+mvn clean compile assembly:single
+
+When it finishes, run:
+mvn install
 
 If the build is succesful then:
 
 1) Open a console in "bowling-score" root directory
 2) Run the following command:
 
-java -cp "target/bowling-score-1.0-SNAPSHOT.jar" "main.App" "txtFile"
+java -jar "target/bowling-score-1.0-SNAPSHOT-jar-with-dependencies.jar" "txtFile"
 
 Example: 
-java -cp "target/bowling-score-1.0-SNAPSHOT.jar" "main.App" "testFiles/initialTest.txt"
+java -jar "target/bowling-score-1.0-SNAPSHOT-jar-with-dependencies.jar" "testFiles/initialTest.txt"
 
 Test cases are inside "testFiles" folder
 
