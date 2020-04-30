@@ -33,7 +33,7 @@ public class App {
 			//Validate that is has a minimum of lines to consider it a game
 			vr.getFileValidator().validate(fileLines);
 
-			//Apply all the rule validations to the file lines
+			//Apply all the game rules validations to the file lines
 			for (ValidationRule rule : vr.getGameValidators()) {
 				rule.validate(fileLines);
 			}

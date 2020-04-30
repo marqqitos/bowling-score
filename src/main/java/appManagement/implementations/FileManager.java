@@ -15,7 +15,9 @@ public class FileManager implements IFileManager{
 
 	@Override
 	public List<String> getFileLines(String fileName) throws Exception {
+		//Try to read the file
 		try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
+			//Get all the lines of the file
 			return br.lines().collect(Collectors.toList());
 		}
 		catch(Exception e) {
